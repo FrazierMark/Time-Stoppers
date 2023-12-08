@@ -41,8 +41,8 @@ const StopWatch = () => {
 
 	// Add currentSplit to array of splits
 	const handleSplit = () => {
-		setCurrentSplit(0)
 		setSplits([...splits, currentSplit]);
+		setCurrentSplit(0)
 	};
 
 	return (
