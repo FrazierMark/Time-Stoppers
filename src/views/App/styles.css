@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'abnes';
+	src: url('/fonts/abnes.ttf');
+}
+
+html,
+body,
+#root {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+#root div div canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	background: linear-gradient(
+		200deg,
+		rgb(45, 212, 162) 10%,
+		/* rgb(121, 114, 9) 35%, */
+		rgb(255, 128, 78) 80%
+	);
+}
