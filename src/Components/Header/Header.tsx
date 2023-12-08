@@ -5,7 +5,7 @@ const Header = () => {
 		<>
 			<nav>
 				<img
-					src={'/imgs/shape.png'}
+					src={'./imgs/shape.png'}
 					className='brand'
 					width='85'
 					height='85'
