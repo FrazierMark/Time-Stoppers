@@ -1,6 +1,6 @@
 import { easing } from 'maath';
 import { useFrame } from '@react-three/fiber';
-import React, { ReactNode, useRef } from 'react';
+import { ReactNode, useRef } from 'react';
 import { Group } from 'three';
 
 interface CameraRigProps {
@@ -14,7 +14,7 @@ const CameraRig = ({ children }: CameraRigProps) => {
 	// (doesn't work when HTML is on top of canvas)
 	useFrame((state, delta) => {
 		easing.dampE(
-			group.current.rotation,
+			group.current!.rotation,
 			[state.pointer.y / 8, -state.pointer.x / 5, 0],
 			0.25,
 			delta

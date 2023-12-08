@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Split from '../Split';
 import './styles.css';
 import TimeDisplay from '../TimeDisplay';
@@ -8,7 +8,7 @@ const StopWatch = () => {
 	const [startEffect, setStartEffect] = useState(false);
 	const [currentSplit, setCurrentSplit] = useState(0);
 	const [splits, setSplits] = useState<number[]>([]);
-	const intervalRef = useRef<NodeJS.Timeout | null>(null);
+	const intervalRef = useRef<number | null>(null);
 
 	// Start Timer when startEffect is True
 	useEffect(() => {
