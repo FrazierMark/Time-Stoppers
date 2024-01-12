@@ -24,7 +24,7 @@ const Watch = ({
 	const stoppy = useGLTF('./glb/finalstoppy.glb');
 	const clockRef = useRef<Group<Object3DEventMap> | null>(null);
 
-	useFrame((state, delta) => {
+	useFrame((_state, delta) => {
 		// Rotates StopWatch once onLoad
 		if (clockRef.current && rotationFactor < 1) {
 			const newRotationFactor = rotationFactor + delta * 0.6;
