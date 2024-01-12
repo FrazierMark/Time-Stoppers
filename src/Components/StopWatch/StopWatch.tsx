@@ -3,7 +3,11 @@ import Split from '../Split';
 import './styles.css';
 import TimeDisplay from '../TimeDisplay';
 
-const StopWatch = () => {
+interface StopWatchProps {
+	setRotationFactor: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const StopWatch = ({ setRotationFactor }: StopWatchProps) => {
 	const [currentTime, setCurrentTime] = useState(0);
 	const [startEffect, setStartEffect] = useState(false);
 	const [currentSplit, setCurrentSplit] = useState(0);
@@ -14,7 +18,7 @@ const StopWatch = () => {
 	useEffect(() => {
 		if (startEffect) {
 			intervalRef.current = setInterval(() => {
-				setCurrentTime((prevTime) => prevTime + 1)
+				setCurrentTime((prevTime) => prevTime + 1);
 				setCurrentSplit((prevSplit) => prevSplit + 1);
 			}, 1000);
 		}
@@ -25,7 +29,6 @@ const StopWatch = () => {
 		};
 	}, [startEffect]);
 
-	
 	// Trigger start/stop
 	const handleClick = () => {
 		setStartEffect((prevStartEffect) => !prevStartEffect);
@@ -35,14 +38,16 @@ const StopWatch = () => {
 	const handleReset = () => {
 		setStartEffect(false);
 		setCurrentTime(0);
-		setCurrentSplit(0)
+		setCurrentSplit(0);
 		setSplits([]);
+		setRotationFactor(0);
 	};
 
 	// Add currentSplit to array of splits
 	const handleSplit = () => {
 		setSplits([...splits, currentSplit]);
-		setCurrentSplit(0)
+		setCurrentSplit(0);
+		setRotationFactor(0);
 	};
 
 	return (

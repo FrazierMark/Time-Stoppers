@@ -1,15 +1,18 @@
 import { Canvas } from '@react-three/fiber';
-import {
-	Environment,
-	ContactShadows,
-	Float,
-} from '@react-three/drei';
+import { Environment, ContactShadows, Float } from '@react-three/drei';
 import Lights from './Lights';
 import CameraRig from './CameraRig';
-import Hands from './Hands';
 import Watch from './Watch';
 
-const CanvasScene = () => {
+interface CanvasSceneProps {
+	setRotationFactor: React.Dispatch<React.SetStateAction<number>>;
+	rotationFactor: number;
+}
+
+const CanvasScene = ({
+	setRotationFactor,
+	rotationFactor,
+}: CanvasSceneProps) => {
 	return (
 		<Canvas shadows={true} camera={{ position: [0, 2, 7.2], fov: 45 }}>
 			<ambientLight intensity={1} />
@@ -24,8 +27,10 @@ const CanvasScene = () => {
 
 			<CameraRig>
 				<Float rotationIntensity={0.5} floatIntensity={1} speed={3}>
-					<Watch />
-					<Hands />
+					<Watch
+						rotationFactor={rotationFactor}
+						setRotationFactor={setRotationFactor}
+					/>
 				</Float>
 			</CameraRig>
 
