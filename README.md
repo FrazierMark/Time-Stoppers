@@ -1,4 +1,4 @@
-# Algorithm Visualizer!
+# Stop Watch App
  
 ## An application to practice using React's useEffect hook.
 
