@@ -16,7 +16,7 @@ const CanvasScene = ({
 	return (
 		<Canvas shadows={true} camera={{ position: [0, 2, 7.2], fov: 45 }}>
 			<ambientLight intensity={1} />
-			<Environment preset='warehouse' blur={0} />
+			<Environment preset='city' blur={0} />
 			<ContactShadows
 				position={[0, -0.8, 0]}
 				opacity={1}
